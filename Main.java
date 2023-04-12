@@ -1,39 +1,85 @@
+import java.awt.*;
+import java.awt.event.KeyEvent;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws AWTException {
+        clearAll();
+        System.out.println();
+        delay();
+        row_16();
+        System.out.println();
+        row_16();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        delay();
         rowFirst();
         System.out.println();
+        delay();
         row_2();
         System.out.println();
+        delay();
         row_3();
         System.out.println();
+        delay();
         row_4();
         System.out.println();
+        delay();
         row_5();
         System.out.println();
+        delay();
         row_6();
         System.out.println();
+        delay();
         row_7();
         System.out.println();
+        delay();
         row_8();
         System.out.println();
+        delay();
         row_9();
         System.out.println();
+        delay();
         row_10();
         System.out.println();
+        delay();
         row_11();
         System.out.println();
+        delay();
         row_12();
         System.out.println();
+        delay();
         row_13();
         System.out.println();
+        delay();
         row_14();
         System.out.println();
+        delay();
         row_15();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        delay();
+        row_16();
+        System.out.println();
+        row_16();
     }
 
+    public static void delay(){
+        int delay = 350; // number of milliseconds to sleep
+        long start = System.currentTimeMillis();
+        while (start >= System.currentTimeMillis() - delay) ; // do nothing
+    }
+    public static void clearAll() throws AWTException {
+        Robot r = new Robot();
+        r.keyPress(KeyEvent.VK_CONTROL);
+        r.keyPress(KeyEvent.VK_Q);
+        r.keyRelease(KeyEvent.VK_CONTROL);
+        r.keyRelease(KeyEvent.VK_Q);
+    }
     public static void rowFirst(){
         for (int i = 0; i<14; ++i){
-            System.out.print('*');
+            System.out.print(ConsoleColors.BLUE + '*');
         }
         for (int i = 0; i<4; ++i){
             System.out.print(' ');
@@ -679,4 +725,14 @@ public class Main {
             System.out.print('*');
         }
     }
+
+    public static void row_16(){
+        for (int i = 0; i<69; ++i){
+            System.out.print(ConsoleColors.BLUE_BRIGHT + '=' + ConsoleColors.RESET);
+        }
+
+    }
+
+
+
 }
